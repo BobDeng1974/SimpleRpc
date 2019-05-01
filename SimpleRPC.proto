@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package SimpleRPC;
+option cc_generic_services = true;
+
+message SimpleHead
+{
+	string service = 1;
+	string method = 2;
+};
+
+message SimpleRequest
+{
+	string request = 1;
+};
+
+message SimpleResponse
+{
+	string response = 1;
+};
+
+service SimpleService
+{
+  rpc SimpleCall(SimpleRequest) returns(SimpleResponse);
+};
