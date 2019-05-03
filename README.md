@@ -1,6 +1,6 @@
 # SimpleRPC
 
-simple implementation of a rpc system with protobuf and nanomsg
+simple implementation of a rpc system using protobuf and nanomsg
 
 ## Build
 
