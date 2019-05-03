@@ -6,7 +6,7 @@
 int main(int argc, char* argv[]) {
   args::ArgumentParser parser("SimpleRpc argument");
   args::ValueFlagList<std::string> addrs(parser, "ip addrs", "ip addresses",
-                                         {'i'}, {"tcp://127.0.0.1:1234"});
+                                         {'i'}, {"tcp://*:1234"});
   parser.ParseCLI(argc, argv);
 
   srpc::SimpleRpcServer server;
