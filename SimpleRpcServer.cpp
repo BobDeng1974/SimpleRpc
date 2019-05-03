@@ -2,14 +2,12 @@
 
 #include "utils.h"
 
-srpc::SimpleRpcServer::SimpleRpcServer(const char* url)
+srpc::SimpleRpcServer::SimpleRpcServer()
     : socket(AF_SP, NN_REP) {
-  socket_id = socket.Bind(url);
 }
 
 srpc::SimpleRpcServer::~SimpleRpcServer() {
   RemoveAllServices();
-  Close();
 }
 
 int srpc::SimpleRpcServer::Bind(const char* url) { return socket.Bind(url); }
@@ -100,4 +98,4 @@ void srpc::SimpleRpcServer::RemoveAllServices() {
   }
 }
 
-int srpc::SimpleRpcServer::Close() { return socket.Shutdown(socket_id); }
+int srpc::SimpleRpcServer::Shutdown(int eid) { return socket.Shutdown(eid); }

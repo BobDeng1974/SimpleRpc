@@ -4,10 +4,10 @@
 
 srpc::SimpleRpcChannel::SimpleRpcChannel(const char* url)
     : socket(AF_SP, NN_REQ) {
-  socket_id = socket.Connect(url);
+  eid = socket.Connect(url);
 }
 
-srpc::SimpleRpcChannel::~SimpleRpcChannel() { Close(); }
+srpc::SimpleRpcChannel::~SimpleRpcChannel() { Shutdown(eid); }
 
 void srpc::SimpleRpcChannel::CallMethod(
     const google::protobuf::MethodDescriptor* method,
@@ -45,4 +45,4 @@ void srpc::SimpleRpcChannel::CallMethod(
   nn::FreeMsg(buf);
 }
 
-int srpc::SimpleRpcChannel::Close() { return socket.Shutdown(socket_id); }
+int srpc::SimpleRpcChannel::Shutdown(int _eid) { return socket.Shutdown(_eid); }

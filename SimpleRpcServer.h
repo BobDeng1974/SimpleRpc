@@ -12,7 +12,7 @@ namespace srpc {
 
 class SimpleRpcServer {
 public:
-  SimpleRpcServer(const char* url);
+  SimpleRpcServer();
   virtual ~SimpleRpcServer();
 
   int Bind(const char* url);
@@ -23,10 +23,9 @@ public:
 
   void RemoveAllServices();
 
-  int Close();
+  int Shutdown(int eid);
 
  private:
-  int socket_id;
   nn::Socket socket;
 
   struct ServiceMeta {

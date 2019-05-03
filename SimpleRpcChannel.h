@@ -17,10 +17,10 @@ class SimpleRpcChannel : public google::protobuf::RpcChannel {
                           const google::protobuf::Message* request,
                           google::protobuf::Message* response,
                           google::protobuf::Closure* done) override;
-  int Close();
+  int Shutdown(int eid);
 
 private:
-  int socket_id;
+  int eid;
   nn::Socket socket;
 };
 
