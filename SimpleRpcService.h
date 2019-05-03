@@ -1,15 +1,15 @@
 #ifndef SIMPLE_RPC_SERVICE_H
 #define SIMPLE_RPC_SERVICE_H
 
-#include "SimpleRPC.pb.h"
+#include "SimpleRpc.pb.h"
 
 namespace srpc {
 
-class SimpleRpcServiceImpl : public SimpleRPC::SimpleService {
+class SimpleRpcServiceImpl : public SimpleRpc::SimpleService {
  public:
   virtual void SimpleCall(google::protobuf::RpcController* controller,
-                          const SimpleRPC::SimpleRequest* request,
-                          SimpleRPC::SimpleResponse* response,
+                          const SimpleRpc::SimpleRequest* request,
+                          SimpleRpc::SimpleResponse* response,
                           google::protobuf::Closure* done) override;
 };
 }  // namespace srpc

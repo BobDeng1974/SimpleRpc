@@ -5,8 +5,8 @@
 
 void srpc::SimpleRpcServiceImpl::SimpleCall(
     google::protobuf::RpcController* controller,
-    const SimpleRPC::SimpleRequest* request,
-    SimpleRPC::SimpleResponse* response, 
+    const SimpleRpc::SimpleRequest* request,
+    SimpleRpc::SimpleResponse* response, 
     google::protobuf::Closure* done) {
   // get request
   std::string req = request->request();

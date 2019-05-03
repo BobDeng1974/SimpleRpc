@@ -26,7 +26,7 @@ void srpc::SimpleRpcServer::Start() {
     int head_size = srpc::FromBigEdian(head_size_bigedian);
 
     // head
-    SimpleRPC::SimpleHead head;
+    SimpleRpc::SimpleHead head;
     head.ParseFromArray(buf + sizeof(head_size), head_size);
 
     // get meta

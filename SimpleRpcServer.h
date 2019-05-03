@@ -3,7 +3,7 @@
 
 #include "nn.h"
 
-#include "SimpleRPC.pb.h"
+#include "SimpleRpc.pb.h"
 
 #include <string>
 #include <unordered_map>

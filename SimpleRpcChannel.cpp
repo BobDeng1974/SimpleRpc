@@ -14,7 +14,7 @@ void srpc::SimpleRpcChannel::CallMethod(
     google::protobuf::RpcController* controller,
     const google::protobuf::Message* request,
     google::protobuf::Message* response, google::protobuf::Closure* done) {
-  SimpleRPC::SimpleHead head;
+  SimpleRpc::SimpleHead head;
   head.set_service(method->service()->name());
   head.set_method(method->name());
 
